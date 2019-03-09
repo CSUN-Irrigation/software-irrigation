@@ -7,8 +7,8 @@ jobs:
      - run:
          name: Hello World
          command: |
-         echo 'Hello World!'
-         echo 'This is the delivery pipeline'
+           echo 'Hello World!'
+           echo 'This is the delivery pipeline'
  I-Have-Code:
    docker:
      - image: alpine:3.7

@@ -36,7 +36,7 @@ Now-Complete:
          command: |
            echo 'Do work once the approval has completed'
 workflows:
- versions: 2
+ version: 2
  Example_Workflow:
    jobs:
      - Hello-World

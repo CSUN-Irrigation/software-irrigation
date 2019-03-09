@@ -27,7 +27,7 @@ jobs:
          name: Running in a Container with Node
          command: |
            node -v
-Now-Complete:
+ Now-Complete:
    docker:
      - image: alpine:3.7
    steps:

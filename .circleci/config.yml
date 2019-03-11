@@ -37,10 +37,6 @@ jobs:
          command: |
            cd Terraform/dev
            ls -al
-           
-     - run:
-         name: Initiate Terraform
-         command: |
            terraform init
            terraform plan
            

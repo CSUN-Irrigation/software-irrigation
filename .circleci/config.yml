@@ -20,6 +20,8 @@ jobs:
            ls -al
            echo '^^^That should look familiar^^^'
  Run-With-Node:
+   docker:
+     - image: alpine:3.7
    steps:
      - run:
          name: Running in a Container with Node

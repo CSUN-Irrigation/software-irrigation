@@ -1,8 +1,13 @@
 version: 2.0
+orbs:
+  aws-cli: circleci/aws-cli@0.1.1
 jobs:
  Build-Terr:
    docker:
      - image: ubuntu:16.04
+   aws-cli:
+    executor: aws-cli/default
+
    steps:
      - checkout
      - run:
@@ -17,7 +22,8 @@ jobs:
            apt-get install -y python-pip python-dev build-essential 
            pip install --upgrade awscli
            aws --version
-           ls -al .aws/
+           
+           
      - run:
          name: Terraform
          command: |

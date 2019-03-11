@@ -22,7 +22,7 @@ jobs:
            apt-get update && apt-get install -y unzip
            wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
            unzip terraform_0.11.11_linux_amd64.zip
-           install terraform Terraform/dev/
+           install terraform /usr/local/bin
            terraform --version
                
 

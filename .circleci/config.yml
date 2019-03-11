@@ -10,6 +10,7 @@ jobs:
          command: |
            ls -al
            echo '^^^That should look familiar^^^'
+     - run:
          name: AWS CLI
            apt-get update && apt-get install -y awscli
            aws --version

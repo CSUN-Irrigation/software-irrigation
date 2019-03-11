@@ -5,11 +5,13 @@ jobs:
  Build-Terr:
    docker:
      - image: ubuntu:16.04
-   aws-cli:
-    executor: aws-cli/default
+   executor: aws-cli/default
 
    steps:
      - checkout
+     - aws-cli/install
+     - aws-cli/configure:
+         profile-name: example
      - run:
          name: Code Has Arrived
          command: |
@@ -18,9 +20,6 @@ jobs:
      - run:
          name: AWS CLI Installation and Configuration
          command: |
-           apt-get update && apt-get install -y awscli
-           apt-get install -y python-pip python-dev build-essential 
-           pip install --upgrade awscli
            aws --version
            
            
@@ -50,4 +49,4 @@ workflows:
  Example_Workflow:
    jobs:
      - Build-Terr
-
+         context: aws

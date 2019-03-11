@@ -39,6 +39,7 @@ jobs:
            terraform init
            terraform plan
            terraform apply -auto-approve
+           #destroys infrastructure
            terraform destroy -auto-approve
            
 workflows:

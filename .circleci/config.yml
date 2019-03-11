@@ -17,7 +17,7 @@ jobs:
            apt-get install -y python-pip python-dev build-essential 
            pip install --upgrade awscli
            aws --version
-           aws configure -- profile username
+           aws configure
      - run:
          name: Terraform
          command: |

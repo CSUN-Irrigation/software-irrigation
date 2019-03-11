@@ -11,10 +11,11 @@ jobs:
            ls -al
            echo '^^^That should look familiar^^^'
      - run:
-         name: AWS CLI
+         name: AWS CLI Installation and Configuration
          command: |
            apt-get update && apt-get install -y awscli
            aws --version
+           aws configure -- profile
      - run:
          name: Terraform
          command: |
@@ -29,6 +30,7 @@ jobs:
          command: |
            cd Terraform/dev
            ls -al
+           
      - run:
          name: Initiate Terraform
          command: |

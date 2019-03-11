@@ -14,7 +14,6 @@ jobs:
          name: Code Has Arrived
          command: |
            ls -al
-           echo '^^^That should look familiar^^^'
      - run:
          name: AWS CLI Installation
          command: |
@@ -24,7 +23,7 @@ jobs:
            aws --version
            
      - run:
-         name: Terraform
+         name: Terraform installation
          command: |
            apt-get update && apt-get install -y wget
            apt-get update && apt-get install -y unzip
@@ -33,12 +32,13 @@ jobs:
            install terraform /usr/local/bin
            terraform --version
      - run:
-         name: Move to work dir
+         name: Terraform Build
          command: |
            cd Terraform/dev
            ls -al
            terraform init
            terraform plan
+           terraform apply
            
 workflows:
  version: 2

@@ -22,7 +22,7 @@ jobs:
            apt-get install -y python-pip python-dev build-essential 
            pip install --upgrade awscli
            aws --version
-           ls /usr/local/bin/aws
+           ls /usr/local/bin/aws/
            
      - run:
          name: Terraform

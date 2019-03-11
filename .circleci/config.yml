@@ -10,6 +10,8 @@ jobs:
          command: |
            ls -al
            echo '^^^That should look familiar^^^'
+           apt-get update && apt-get install -y awscli
+           aws --version
 
 workflows:
  version: 2

@@ -18,11 +18,11 @@ jobs:
      - run:
          name: Terraform
          command: |
-           apt-get install wget
-           apt-get install unzip
+           apt-get update && apt-get install -y wget
+           apt-get update && apt-get install -y unzip
            wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
            unzip terraform_0.11.11_linux_amd64.zip
-           install terraform /usr/local/bin/
+           install -y terraform /usr/local/bin/
            terraform --version
                
 

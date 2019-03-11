@@ -49,4 +49,3 @@ workflows:
  Example_Workflow:
    jobs:
      - Build-Terr
-         context: aws

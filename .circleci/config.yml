@@ -24,8 +24,17 @@ jobs:
            unzip terraform_0.11.11_linux_amd64.zip
            install terraform /usr/local/bin
            terraform --version
-               
-
+     - run:
+         name: Move to work dir
+         command: |
+           cd Terraform/dev
+           ls -al
+     - run:
+         name: Initiate Terraform
+         command: |
+           terraform init
+           terraform plan
+           
 workflows:
  version: 2
  Example_Workflow:

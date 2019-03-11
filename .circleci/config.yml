@@ -1,15 +1,6 @@
 version: 2.0
 jobs:
- Hello-World:
-   docker:
-     - image: alpine:3.7
-   steps:
-     - run:
-         name: Hello World
-         command: |
-           echo 'Hello World!'
-           echo 'This is the delivery pipeline'
- I-Have-Code:
+ Build-Terr:
    docker:
      - image: alpine:3.7
    steps:
@@ -19,39 +10,10 @@ jobs:
          command: |
            ls -al
            echo '^^^That should look familiar^^^'
- Run-With-Node:
-   docker:
-     - image: alpine:3.7
-   steps:
-     - run:
-         name: Running in a Container with Node
-         command: |
-           ls -al
-           echo '^^^That^^^'
- Now-Complete:
-   docker:
-     - image: alpine:3.7
-   steps:
-     - run:
-         name: Approval Complete
-         command: |
-           echo 'Do work once the approval has completed'
+
 workflows:
  version: 2
  Example_Workflow:
    jobs:
-     - Hello-World
-     - I-Have-Code:
-         requires:
-           - Hello-World
-     - Run-With-Node:
-         requires:
-           - Hello-World
-     - Hold-For-Approval:
-         type: approval
-         requires:
-           - Run-With-Node
-           - I-Have-Code
-     - Now-Complete:
-         requires:
-           - Hold-For-Approval
+     - Build-Terr
+
